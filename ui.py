@@ -2,7 +2,7 @@ import streamlit as st
 import llm
 
 st.set_page_config(
-    page_title="AI Chatbot",
+    page_title="Convo-AI",
     page_icon="🤖",
     layout="centered",
     initial_sidebar_state="collapsed",
@@ -49,7 +49,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Header
-st.title("🤖 AI Chatbot")
+st.title("🤖 Convo-AI")
 st.write("Welcome! Ask me anything, and I'll do my best to assist. Type your message below and hit **Submit**!")
 
 humanInput = st.text_input("Enter your prompt here", placeholder="What's on your mind?")
