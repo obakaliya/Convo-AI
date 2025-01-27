@@ -58,8 +58,18 @@ if st.button("Submit"):
         st.warning("⚠️ Please enter a prompt above before submitting.")
     else:
         llm_response = llm.process(humanInput)
-        for m in llm_response:
+        
+        # Reverse the order of messages before displaying
+        reversed_messages = reversed(llm_response)
+        
+        for m in reversed_messages:
             if m.type == 'human':
-                st.markdown(f"<div class='human-message'><strong>Human:</strong> {m.content}</div>", unsafe_allow_html=True)
+                st.markdown(
+                    f"<div class='human-message'><strong>Human:</strong> {m.content}</div>",
+                    unsafe_allow_html=True
+                )
             else:
-                st.markdown(f"<div class='ai-message'><strong>AI:</strong> {m.content}</div>", unsafe_allow_html=True)
+                st.markdown(
+                    f"<div class='ai-message'><strong>AI:</strong> {m.content}</div>",
+                    unsafe_allow_html=True
+                )

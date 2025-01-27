@@ -22,12 +22,13 @@ prompt_template = ChatPromptTemplate.from_messages(
     [
         (
             "system",
-            "You are a helpful assistant. Answer all questions to the best of your ability in {language}.",
+            "You are a helpful assistant. Answer all questions to the best of your ability in {language}. " 
+            "Ensure that all conversations, including both user questions and AI responses, remain visible to everyone. "
+            "Each time a user asks a question, provide an answer and make sure it is displayed along with previous interactions."
         ),
         MessagesPlaceholder(variable_name="messages"),
     ]
 )
-
 
 # Define the function that calls the model
 def call_model(state: State):
